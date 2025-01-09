@@ -53,7 +53,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *                 error:
  *                   type: string
  */
-app.get('/token', async (req, res) => {
+app.get('/api/token', async (req, res) => {
   try {
     const token = await aaiClient.realtime.createTemporaryToken({ expires_in: 3600 });
     console.log("Generated Token :", token)
